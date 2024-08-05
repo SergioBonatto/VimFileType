@@ -38,8 +38,8 @@ autocmd BufNewFile,BufRead *.yaml,*.yml set filetype=yaml | set syntax=yaml
 
 ## Como Instalar
 
-    1 - Clone o repositório para o diretório de plugins do Vim:
-        ```sh
+1 - Clone o repositório para o diretório de plugins do Vim:
+
         git clone https://github.com/seu-usuario/filetype.vim ~/.vim/pack/plugins/start/filetype.vim
-        ```
-    2 - Reinicie o Vim para carregar o plugin.
+
+2 - Reinicie o Vim para carregar o plugin.
