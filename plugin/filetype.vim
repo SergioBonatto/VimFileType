@@ -9,6 +9,7 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.js,*.jsx set filetype=javascript | set syntax=javascript
   autocmd BufNewFile,BufRead *.ts,*.tsx set filetype=typescript | set syntax=typescript
   autocmd BufNewFile,BufRead *.kind,*.kind2 set filetype=kind | set syntax=kind
+  autocmd BufNewFile,BufRead *.kindc set filetype=kindc | set syntax=haskell
   autocmd BufNewFile,BufRead *.kindelia,*.kdl set filetype=kindelia | set syntax=javascript
   autocmd BufNewFile,BufRead *.hvm,*.icvm,*.ic set filetype& | set syntax=javascript
   autocmd BufNewFile,BufRead *.ksc set syntax=javascript
@@ -73,6 +74,8 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.sol set filetype=solidity | set syntax=solidity
   autocmd BufNewFile,BufRead *.j2,*.jinja set filetype=jinja | set syntax=jinja
   autocmd BufNewFile,BufRead *.hcl set filetype=hcl | set syntax=hcl
+  autocmd BufNewFile,BufRead *.todo set filetype=todo | set syntax=todo
+  autocmd BufNewFile,BufRead *.md set filetype=markdown | set syntax=markdown
 augroup END
 
 " Definição de regiões de sintaxe para arquivos específicos
