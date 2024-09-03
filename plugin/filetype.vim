@@ -4,6 +4,8 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.lean set filetype=lean
   autocmd BufNewFile,BufRead *.coc set filetype=coc
   autocmd BufNewFile,BufRead *.html set syntax=html
+  autocmd BufNewFile,BufRead *.vimrc set syntax=vim
+  autocmd BufNewFile,BufRead *.zshrc set syntax=zsh
   autocmd BufNewFile,BufRead *.css set syntax=css
   autocmd BufNewFile,BufRead *.kind2 set filetype=kind2 | set syntax=kind
   autocmd BufNewFile,BufRead *.js,*.jsx set filetype=javascript | set syntax=javascript
