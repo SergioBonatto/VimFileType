@@ -19,6 +19,7 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.erl set filetype=erlang | set syntax=erlang
   autocmd BufNewFile,BufRead *.ex,*.exs set filetype=elixir | set syntax=elixir
   autocmd BufNewFile,BufRead *.fs,*.fsi set filetype=fsharp | set syntax=fsharp
+  autocmd BufNewFile,BufRead *.fibo set filetype=fibo | set syntax=hvml
   autocmd BufNewFile,BufRead *.go set filetype=go | set syntax=go
   autocmd BufNewFile,BufRead *.gradle set filetype=groovy | set syntax=groovy
   autocmd BufNewFile,BufRead *.groovy set filetype=groovy | set syntax=groovy
@@ -28,6 +29,8 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.hs set filetype=haskell | set syntax=haskell
   autocmd BufNewFile,BufRead *.html set syntax=html
   autocmd BufNewFile,BufRead *.hvm,*.icvm,*.ic set filetype& | set syntax=javascript
+  autocmd BufNewFile,BufRead *.hvml set filetype=hvml | set syntax=hvml
+  autocmd BufNewFile,BufRead *.ic set filetype=ic | set syntax=hvml
   autocmd BufNewFile,BufRead *.ini set filetype=dosini | set syntax=dosini
   autocmd BufNewFile,BufRead *.j2,*.jinja set filetype=jinja | set syntax=jinja
   autocmd BufNewFile,BufRead *.java set filetype=java | set syntax=java
@@ -51,6 +54,7 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.mm set filetype=objcpp | set syntax=objcpp
   autocmd BufNewFile,BufRead *.nix set filetype=nix | set syntax=nix
   autocmd BufNewFile,BufRead *.php set filetype=php | set syntax=php
+  autocmd BufNewFile,BufRead *.phi set filetype=phi | set syntax=phi
   autocmd BufNewFile,BufRead *.pl set filetype=perl | set syntax=perl
   autocmd BufNewFile,BufRead *.proto set filetype=proto | set syntax=proto
   autocmd BufNewFile,BufRead *.ps1 set filetype=powershell | set syntax=powershell
