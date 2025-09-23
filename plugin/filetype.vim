@@ -85,6 +85,8 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.xml set filetype=xml | set syntax=xml
   autocmd BufNewFile,BufRead *.yaml,*.yml set filetype=yaml | set syntax=yaml
   autocmd BufNewFile,BufRead *.zshrc set syntax=zsh
+  autocmd BufNewFile,BufRead *.zsh set syntax=zsh
+
 augroup END
 
 " Definição de regiões de sintaxe para arquivos específicos
