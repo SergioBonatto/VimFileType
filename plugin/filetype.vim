@@ -58,6 +58,7 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead *.pl set filetype=perl | set syntax=perl
   autocmd BufNewFile,BufRead *.proto set filetype=proto | set syntax=proto
   autocmd BufNewFile,BufRead *.ps1 set filetype=powershell | set syntax=powershell
+  autocmd BufNewFile,BufRead *.prx set filetype=praxis | set syntax=praxis
   autocmd BufNewFile,BufRead *.pwd,*.pvt set filetype=javascript | set syntax=javascript
   autocmd BufNewFile,BufRead *.py set filetype=python | set syntax=python
   autocmd BufNewFile,BufRead *.r set filetype=r | set syntax=r
@@ -121,4 +122,3 @@ augroup END
 
 " Ativar plugins de filetype
 filetype plugin on
-
