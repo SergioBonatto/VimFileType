@@ -38,13 +38,13 @@ The plugin distinguishes between dedicated sensitive files and languages that su
 ### Using vim-plug
 Add the following to your configuration:
 ```vim
-Plug 'your-username/vim-filetype'
+Plug 'SergioBonatto/VimFileType'
 ```
 
 ### Manual Installation
 Clone the repository into your Vim plugin path:
 ```sh
-git clone https://github.com/your-username/vim-filetype.git ~/.vim/pack/plugins/start/vim-filetype
+git clone https://github.com/SergioBonatto/VimFileType.git ~/.vim/pack/plugins/start/VimFileType
 ```
 
 ## Configuration
