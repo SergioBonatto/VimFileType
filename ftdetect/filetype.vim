@@ -26,6 +26,7 @@ augroup filetypedetect
   autocmd BufRead,BufNewFile *.hcl                   setf hcl
   autocmd BufRead,BufNewFile *.hs                    setf haskell
   autocmd BufRead,BufNewFile *.html                  setlocal syntax=html
+  autocmd BufNewFile,BufRead *.http                  setf http | setlocal syntax=http
   autocmd BufRead,BufNewFile *.hvm,*.icvm,*.ic       setf javascript | set filetype&
   autocmd BufRead,BufNewFile *.hvml                  setf hvml
   autocmd BufRead,BufNewFile *.ic                    setf ic | setlocal syntax=hvml
@@ -80,13 +81,14 @@ augroup filetypedetect
   autocmd BufRead,BufNewFile *.xml                   setf xml
   autocmd BufRead,BufNewFile *.yaml,*.yml            setf yaml
   autocmd BufRead,BufNewFile *.zshrc,*.zsh           setlocal syntax=zsh
+  autocmd BufRead,BufNewFile *.zsh-theme             setlocal syntax=zsh
   autocmd BufRead,BufNewFile *.bend                  setf bend
 augroup END
 
 " Custom syntax regions for password masking
 augroup syntaxregions
   autocmd!
-  autocmd BufRead,BufNewFile *.hvm,*.icvm,*.ic,*.ksc syntax region Password start=/^\/\/\~/ end=/$/
+  autocmd BufRead,BufNewFile *.hvm,*.icvm,*.ic,*.ksc  syntax region Password start=/^\/\/\~/ end=/$/
   autocmd BufRead,BufNewFile *.pwd                    syntax region Password start=/"{/ end=/}"/
   autocmd BufRead,BufNewFile *.pvt                    syntax region Password start=/^/ end=/$/
 augroup END
