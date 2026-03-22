@@ -1,45 +1,59 @@
-# filetype.vim
+# vim-filetype
 
-Este plugin do Vim configura automaticamente o tipo de arquivo e a sintaxe para diferentes extensões de arquivo. Ele utiliza autocomandos (`autocmd`) para detectar novos arquivos ou arquivos lidos e definir as configurações apropriadas de `filetype` e `syntax`.
+## Description
+A Vim plugin for automated filetype detection and buffer-local configuration. It implements a modular structure to isolate filetype identification from language-specific settings, ensuring optimal performance through lazy loading.
 
-## Estrutura do Projeto
-
-```sh
+## Directory Structure
+```text
 VimFileType/
-├── plugin/
-│   └── filetype.vim
+├── ftdetect/
+│   └── filetype.vim    # Filetype detection and syntax regions
+├── ftplugin/           # Buffer-local mappings and options
+│   ├── agda.vim
+│   ├── pwd.vim
+│   ├── pvt.vim
+│   └── scheme.vim
+├── plugin/             # Global configuration and highlighting
+└── README.md
 ```
 
+## Technical Implementation
 
-## Funcionalidades
+### Filetype Detection (`ftdetect/`)
+Detection is performed using `setfiletype` (setf). This approach prioritizes existing filetype definitions and avoids conflicts with other plugins or manual user overrides.
 
-- Detecta automaticamente o tipo de arquivo com base na extensão do arquivo.
-- Define a sintaxe apropriada para o tipo de arquivo detectado.
-- Suporta uma ampla variedade de linguagens de programação e formatos de arquivo.
+### Buffer-Specific Logic (`ftplugin/`)
+Logic that modifies buffer state is isolated in `ftplugin/` files. These are only executed when the specific filetype is active:
+- **Agda**: Maps `<leader>l` to `call agda#load()`.
+- **Scheme**: Executes `setlocal nolisp`.
+- **Sensitive Files (.pvt, .pwd)**: Inherits `javascript` syntax, disables `colorcolumn` and `undofile`, and overrides `<leader>g` with a restriction message.
 
-## Exemplo de Uso
+### Syntax Masking and Sensitive Files
+The plugin distinguishes between dedicated sensitive files and languages that support inline password masking:
+- **Dedicated Sensitive Files**: `.pvt` and `.pwd` files are treated as sensitive containers. They use JavaScript syntax but have specific security-oriented buffer settings.
+- **Languages with Masking Support**: `.hvm`, `.icvm`, `.ic`, and `.ksc` are programming languages. The plugin defines a `Password` syntax region for these languages to mask specific patterns (e.g., lines starting with `//~`).
 
-Aqui estão alguns exemplos de como o `filetype.vim` configura o tipo de arquivo e a sintaxe para diferentes extensões de arquivo:
+## Installation
 
+### Using vim-plug
+Add the following to your configuration:
 ```vim
-autocmd BufNewFile,BufRead *.r set filetype=r | set syntax=r
-autocmd BufNewFile,BufRead *.pl set filetype=perl | set syntax=perl
-autocmd BufNewFile,BufRead *.lua set filetype=lua | set syntax=lua
-autocmd BufNewFile,BufRead *.scala set filetype=scala | set syntax=scala
-autocmd BufNewFile,BufRead *.swift set filetype=swift | set syntax=swift
-autocmd BufNewFile,BufRead *.kt,*.kts set filetype=kotlin | set syntax=kotlin
-autocmd BufNewFile,BufRead *.dart set filetype=dart | set syntax=dart
-autocmd BufNewFile,BufRead *.scss set filetype=scss | set syntax=scss
-autocmd BufNewFile,BufRead *.sass set filetype=sass | set syntax=sass
-autocmd BufNewFile,BufRead *.less set filetype=less | set syntax=less
-autocmd BufNewFile,BufRead *.coffee set filetype=coffee | set syntax=coffee
-autocmd BufNewFile,BufRead *.yaml,*.yml set filetype=yaml | set syntax=yaml
+Plug 'your-username/vim-filetype'
 ```
 
-## Como Instalar
+### Manual Installation
+Clone the repository into your Vim plugin path:
+```sh
+git clone https://github.com/your-username/vim-filetype.git ~/.vim/pack/plugins/start/vim-filetype
+```
 
-1 - Clone o repositório para o diretório de plugins do Vim:
+## Configuration
 
-        git clone https://github.com/seu-usuario/filetype.vim ~/.vim/pack/plugins/start/filetype.vim
+### Customizing Highlighting
+The `Password` highlight group can be overridden in your configuration. Use `highlight default` to ensure your settings take precedence:
+```vim
+highlight Password ctermfg=white guifg=white ctermbg=blue guibg=blue
+```
 
-2 - Reinicie o Vim para carregar o plugin.
+## License
+Distributed under the same terms as Vim itself.
