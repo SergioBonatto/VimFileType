@@ -63,6 +63,7 @@ augroup filetypedetect
   autocmd BufRead,BufNewFile *.rb,*.rbw              setf ruby
   autocmd BufRead,BufNewFile *.rmd                   setf rmd
   autocmd BufRead,BufNewFile *.rs                    setf rust
+  autocmd BufRead,BufNewFile *.s                     setf asm
   autocmd BufRead,BufNewFile *.sass                  setf sass
   autocmd BufRead,BufNewFile *.scala                 setf scala
   autocmd BufRead,BufNewFile *.scss                  setf scss
