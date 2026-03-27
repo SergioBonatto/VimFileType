@@ -41,6 +41,7 @@ augroup filetypedetect
   autocmd BufRead,BufNewFile *.kindelia,*.kdl        setf kindelia | setlocal syntax=javascript
   autocmd BufRead,BufNewFile *.ksc                   setlocal syntax=javascript
   autocmd BufRead,BufNewFile *.kt,*.kts              setf kotlin
+  autocmd BufRead,BufNewFile *.ld					 setf gld
   autocmd BufRead,BufNewFile *.lean                  setf lean
   autocmd BufRead,BufNewFile *.less                  setf less
   autocmd BufRead,BufNewFile *.lua                   setf lua
